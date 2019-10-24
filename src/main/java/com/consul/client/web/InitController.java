@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.consul.client.web.config.ConfigConsul;
 
 @RestController
-@RequestMapping(value = "my-app")
+@RequestMapping(value = "desction-client")
 public class InitController {
 
 	@Autowired

@@ -1,10 +1,16 @@
 spring:
   application:
-    name: myApp
+    name: client
   cloud:
     consul:
       discovery:
         instanceId: ${spring.application.name}:${random.value}
       config:
         enabled: true
+      
+server:
+  port: ${my.port:8080}
+  
+my:
+  prop: descriçao do cliente via yml
         

@@ -1,5 +1,0 @@
-server:
-  port: ${my.port:7777}
-  
-my:
-  prop: 456
