@@ -1,4 +1,4 @@
-package com.consul.client.web.config;
+package com.consul.client.properties;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.cloud.context.config.annotation.RefreshScope;

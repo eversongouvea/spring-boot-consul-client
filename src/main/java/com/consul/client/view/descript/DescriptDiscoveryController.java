@@ -1,4 +1,4 @@
-package com.consul.client.web;
+package com.consul.client.view.descript;
 
 import java.net.URI;
 import java.util.Optional;
@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping(value = "services")
-public class ServiceDiscoveryController {
+public class DescriptDiscoveryController {
 
 	@Autowired
 	private DiscoveryClient discoveryClient;

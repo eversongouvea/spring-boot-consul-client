@@ -1,3 +1,4 @@
+#Consfig spring
 spring:
   application:
     name: client
@@ -7,10 +8,16 @@ spring:
         instanceId: ${spring.application.name}:${random.value}
       config:
         enabled: true
-      
+
+#Config  server      
 server:
-  port: ${my.port:8080}
+  port: ${my.port:0}
   
+#Config feign  
+feign:
+  hystrix:
+    enabled: true        
+
+#Config custom
 my:
   prop: descriçao do cliente via yml
-        
