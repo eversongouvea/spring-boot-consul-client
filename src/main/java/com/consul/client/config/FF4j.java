@@ -22,7 +22,7 @@ public class FF4j {
     @Bean
     public org.ff4j.FF4j ff4j() {
     	
-        org.ff4j.FF4j ff4jObject = new org.ff4j.FF4j().audit(true).autoCreate(true);
+        org.ff4j.FF4j ff4jObject = new org.ff4j.FF4j();
         
         Consul c = Consul.builder()
         		         .withHostAndPort(HostAndPort.fromParts(consulHost, consulPort))
