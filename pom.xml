@@ -52,7 +52,8 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-ribbon</artifactId>
 		</dependency>
-
+		
+		<!-- FF4J -->
 		<dependency>
 			<groupId>org.ff4j</groupId>
 			<artifactId>ff4j-aop</artifactId>
@@ -63,7 +64,22 @@
 			<artifactId>ff4j-store-consul</artifactId>
 			<version>${ff4j.version}</version>
 		</dependency>
-
+		
+		<!-- JDBC -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-jdbc</artifactId>
+		</dependency>
+		<dependency>
+            <groupId>org.ff4j</groupId>
+            <artifactId>ff4j-store-springjdbc</artifactId>
+            <version>${ff4j.version}</version>
+        </dependency>
+		<dependency>
+			<groupId>com.microsoft.sqlserver</groupId>
+			<artifactId>mssql-jdbc</artifactId>
+			<scope>runtime</scope>
+		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

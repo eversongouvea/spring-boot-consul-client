@@ -48,6 +48,20 @@ public class ProductController {
 
 	}
 
+	@GetMapping("/properties")
+	public String getProperties() {
+
+		PropertyStore propertiesStore = ff4j.getPropertiesStore();
+
+		String valor = "Valor da properties";
+		if (propertiesStore.existProperty("properties")) {
+			Property<?> readProperty = propertiesStore.readProperty("properties");
+			valor = (String) readProperty.getValue();
+		}
+
+		return valor;
+	}
+	
 	@GetMapping("/message")
 	public String getMessage() {
 
