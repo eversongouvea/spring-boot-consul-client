@@ -1,6 +1,7 @@
 package com.consul.client.view.product;
 
 import org.ff4j.FF4j;
+import org.ff4j.core.Feature;
 import org.ff4j.property.Property;
 import org.ff4j.property.store.PropertyStore;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,35 +49,31 @@ public class ProductController {
 
 	}
 
-	@GetMapping("/properties")
+	@GetMapping("/propriedade")
 	public String getProperties() {
 
 		PropertyStore propertiesStore = ff4j.getPropertiesStore();
 
-		String valor = "Valor da properties";
-		if (propertiesStore.existProperty("properties")) {
-			Property<?> readProperty = propertiesStore.readProperty("properties");
-			valor = (String) readProperty.getValue();
+		String valor = "não existe";
+		if (propertiesStore.existProperty("propriedade")) {
+			Property<?> readProperty = propertiesStore.readProperty("propriedade");
+			valor += (String) readProperty.getValue();
 		}
 
-		return valor;
+		return String.format("Valor da properties: %s", valor);
 	}
 	
-	@GetMapping("/message")
+	@GetMapping("/mensagem")
 	public String getMessage() {
 
-		PropertyStore propertiesStore = ff4j.getPropertiesStore();
+		Feature feature = ff4j.getFeature("mensagem");
 
-		String valor = "";
-		if (propertiesStore.existProperty("message")) {
-			Property<?> readProperty = propertiesStore.readProperty("message");
-			valor = (String) readProperty.getValue();
-		}
-
-		if (ff4j.check("f1")) {
-			return valor + " FF4j f1 true";
+		if (feature.isEnable()) {
+			Property<Object> property = feature.getProperty("dia");
+			return (String) property.getValue();
 		} else {
-			return "FF4j f1 false";
+			Property<Object> property = feature.getProperty("noite");
+			return (String) property.getValue();
 		}
 	}
 
