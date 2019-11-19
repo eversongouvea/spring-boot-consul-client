@@ -57,7 +57,7 @@ public class ProductController {
 		String valor = "não existe";
 		if (propertiesStore.existProperty("propriedade")) {
 			Property<?> readProperty = propertiesStore.readProperty("propriedade");
-			valor += (String) readProperty.getValue();
+			valor = (String) readProperty.getValue();
 		}
 
 		return String.format("Valor da properties: %s", valor);
@@ -77,6 +77,18 @@ public class ProductController {
 		}
 	}
 
+	@GetMapping("/ponderado")
+	public String ponderado() {
+		
+		String recurso = "Aguardando recurso";
+		
+		if (ff4j.check("ponderado")) {
+			recurso = "Recurso ativado";
+	    } 
+		
+		return recurso;
+	}
+	
 	@GetMapping("/frete")
 	public String frete() {
 
